@@ -1,0 +1,12 @@
+greenlet==3.0.1
+markdown-it-py==3.0.0
+mdurl==0.1.2
+pyaes==1.6.1
+Pygments==2.16.1
+Pyrography==1.0.2
+PySocks==1.7.1
+python-dotenv==1.0.0
+rich==13.4.2
+SQLAlchemy==2.0.23
+TgCrypto==1.2.5
+typing_extensions==4.8.0
