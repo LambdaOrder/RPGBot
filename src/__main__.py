@@ -6,9 +6,9 @@ from asyncio import run
 import utils
 
 load_dotenv()
-api_hash = getenv("api_hash")
-api_id = getenv("api_id")
-bot_token = getenv("bot_token")
+api_hash = getenv("API_HASH")
+api_id = getenv("API_ID")
+bot_token = getenv("BOT_TOKEN")
 app = Client("LambdaOrderRPGBot", api_id=api_id,
              api_hash=api_hash, bot_token=bot_token)
 
@@ -26,4 +26,6 @@ async def dado(client, message):
 async def messages(client, message):
     await message.reply("Hello world")
 
-app.run()
+
+if __name__ == "__main__":
+    app.run()
