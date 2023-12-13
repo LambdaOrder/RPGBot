@@ -61,7 +61,7 @@ class Classe(Atributos, Base):
         "Personagem", secondary=personagens_classes_association_table, back_populates="classes")
 
 
-class Personagem(Base):
+class Personagem(Base,  Atributos):
     __tablename__ = "personagens"
 
     game_id = Column(Integer, ForeignKey("games.id"))
@@ -74,8 +74,11 @@ class Personagem(Base):
     tendencia = Column(String)
     experiencia = Column(Integer)
 
-    inspiracao = Column(String)
+    inspiracao = Column(Boolean)
     proficiencia = Column(String)
+    iniciativa = Column(Integer)
+    pontos_de_vida_atuais = Column(Integer)
+    pontos_de_vida_temporarios = Column(Integer)
     
 
     classes = relationship(
