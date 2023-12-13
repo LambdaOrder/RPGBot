@@ -79,6 +79,12 @@ class Personagem(Base,  Atributos):
     iniciativa = Column(Integer)
     pontos_de_vida_atuais = Column(Integer)
     pontos_de_vida_temporarios = Column(Integer)
+
+    #Personalidade
+    traits = Column(Text)
+    ideais = Column(Text)
+    vinculos = Column(Text)
+    defeitos = Column(Text)
     
 
     classes = relationship(
