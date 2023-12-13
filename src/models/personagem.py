@@ -1,11 +1,10 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Table, Text, column
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Table, Text
 from .base import Base
 from sqlalchemy.orm import relationship
 
 
 class Atributos():
     __tablename__ = "atributos"
-
     forca = Column(Integer, default=0)
     destreza = Column(Integer, default=0)
     constituicao = Column(Integer, default=0)
@@ -48,6 +47,15 @@ class Classe(Atributos, Base):
     __tablename__ = "classes"
     nome = Column(String)
     level = Column(Integer)
+
+
+    # testes de resistencia
+    resistencia_forca = Column(Boolean, default=False)
+    resistencia_destreza = Column(Boolean, default=False)
+    resistencia_constituicao = Column(Boolean, default=False)
+    resistencia_inteligencia = Column(Boolean, default=False)
+    resistencia_sabedoria = Column(Boolean, default=False)
+    resistencia_carisma = Column(Boolean, default=False)
 
     personagens = relationship(
         "Personagem", secondary=personagens_classes_association_table, back_populates="classes")
