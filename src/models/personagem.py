@@ -73,7 +73,6 @@ class Personagem(Base,  Atributos):
     raca = relationship("Raca", back_populates="personagens")
     tendencia = Column(String)
     experiencia = Column(Integer)
-
     inspiracao = Column(Boolean)
     proficiencia = Column(String)
     iniciativa = Column(Integer)
@@ -85,6 +84,28 @@ class Personagem(Base,  Atributos):
     ideais = Column(Text)
     vinculos = Column(Text)
     defeitos = Column(Text)
+
+    #  Pericias
+    acrobacia = Column(Boolean, default=False)
+    adestrar_animais = Column(Boolean, default=False)
+    arcanismo = Column(Boolean, default=False)
+    atletismo = Column(Boolean, default=False)
+    atuacao = Column(Boolean, default=False)
+    enganacao = Column(Boolean, default=False)
+    furtividade = Column(Boolean, default=False)
+    historia = Column(Boolean, default=False)
+    intimidacao = Column(Boolean, default=False)
+    intuicao = Column(Boolean, default=False)
+    investigacao = Column(Boolean, default=False)
+    medicina = Column(Boolean, default=False)
+    natureza = Column(Boolean, default=False)
+    percepcao = Column(Boolean, default=False)
+    persuasao = Column(Boolean, default=False)
+    prestidigitacao = Column(Boolean, default=False)
+    religiao = Column(Boolean, default=False)
+    sobrevivencia = Column(Boolean, default=False)
+    
+
     
 
     classes = relationship(
