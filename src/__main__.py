@@ -3,7 +3,7 @@ import re
 from dotenv import load_dotenv
 from pyrography import Client, filters
 from asyncio import run
-import utils
+import services.utils
 
 load_dotenv()
 api_hash = getenv("API_HASH")
