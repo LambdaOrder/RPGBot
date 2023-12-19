@@ -31,6 +31,8 @@ class Raca(Atributos, Base):
     __tablename__ = "racas"
     nome = Column(String)
     idioma = Column(String)
+    tipo = Column(String)
+
 
     personagens = relationship("Personagem", back_populates="raca")
 
