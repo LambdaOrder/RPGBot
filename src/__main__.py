@@ -1,16 +1,10 @@
-from os import getenv
 import re
-from dotenv import load_dotenv
-from pyrography import Client, filters
-from asyncio import run
+from pyrography import filters
 import services.utils
+from services.telegramapi import app
+from pyrography.types import InlineKeyboardMarkup, InlineKeyboardButton
+from services.database import session
 
-load_dotenv()
-api_hash = getenv("API_HASH")
-api_id = getenv("API_ID")
-bot_token = getenv("BOT_TOKEN")
-app = Client("LambdaOrderRPGBot", api_id=api_id,
-             api_hash=api_hash, bot_token=bot_token)
 
 
 @app.on_message(filters.command('d'))
