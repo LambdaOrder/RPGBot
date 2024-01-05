@@ -3,8 +3,8 @@ from pyrography import filters
 import services.utils
 from services.telegramapi import app
 from pyrography.types import InlineKeyboardMarkup, InlineKeyboardButton
-from services.database import session
 
+from services.database import async_session
 
 
 @app.on_message(filters.command('d'))
