@@ -14,3 +14,12 @@ class GameController:
                 await session.commit()
 
         return new_game
+    
+    async def get_all(self):
+        async with self.async_session() as session:
+            games = await session.execute(select(Game))
+        game_list = [game for game in games]
+
+        return game_list
+    
+    
