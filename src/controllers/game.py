@@ -18,8 +18,13 @@ class GameController:
     async def get_all(self):
         async with self.async_session() as session:
             games = await session.execute(select(Game))
-        game_list = [game for game in games]
 
+        game_list = games.all()
         return game_list
-    
-    
+
+    async def get_by_nome(self, nome:str):
+        async with self.async_session() as session:
+            games = await session.execute(select(Game).where(Game.nome==nome))
+
+        game_list = games.all()
+        return game_list
