@@ -1,4 +1,4 @@
-from sqlalchemy import select, update
+from sqlalchemy import delete, select, update
 from models.game import Game
 
 
@@ -43,4 +43,9 @@ class GameController:
                 await session.execute(update(Game).where(Game.id==id).values(**kwargs))
                 await session.commit()
 
-
+    async def delete(self, id:int):
+        async with self.async_session() as session:
+            game = self.get_by_id(id)
+            if game:
+                await session.execute(delete(Game).where(Game.id==id))
+                await session.commit()
