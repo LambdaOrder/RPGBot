@@ -1,4 +1,4 @@
-from sqlalchemy import select
+from sqlalchemy import select, update
 from models.game import Game
 
 
@@ -35,4 +35,12 @@ class GameController:
 
         game = games.all()
         return game
+
+    async def update(self, id:int, **kwargs):
+        async with self.async_session() as session:
+            game = self.get_by_id(id)
+            if game:
+                await session.execute(update(Game).where(Game.id==id).values(**kwargs))
+                await session.commit()
+
 
