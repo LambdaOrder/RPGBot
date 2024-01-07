@@ -28,3 +28,11 @@ class GameController:
 
         game_list = games.all()
         return game_list
+
+    async def get_by_id(self, id:int):
+        async with self.async_session() as session:
+            games = await session.execute(select(Game).where(Game.id==id))
+
+        game = games.all()
+        return game
+
